@@ -1,0 +1,34 @@
+import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { HomePage }     from './home.page';
+import { LocationPage } from '../location/location.page';
+
+const routes: Routes = [{
+    path: 'tabs',
+    component: HomePage,
+    children: [
+        {
+            path: 'tabs',
+            component: HomePage,
+            children: [
+                {
+                    path: 'location',
+                    outlet: 'location',
+                    component: LocationPage
+                }
+            ]
+        },
+        {
+            path: '',
+            redirectTo: '/tabs/(location:location)'
+        }
+    ]
+}];
+
+@NgModule({
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
+})
+
+export class HomePageRoutingModule {}
