@@ -1,0 +1,6 @@
+{
+  "appId": "com.imaginativeData.campermate",
+  "appName": "campermate",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}
